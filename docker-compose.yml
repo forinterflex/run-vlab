@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+  vlab-mqtt-broker:
+    image: eclipse-mosquitto
+    environment:
+      - OWNER=AIT
+    container_name: iflex-vlab-mqtt-broker
+    ports:
+      -1883:1883
+      -9001:9001
+      
+  vlab-config:
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    ports:
+      - 10101:10101
+    command: config
+    container_name: iflex-vlab-config
+    
+  vlab-load1:
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: load1
+    container_name: iflex-vlab-load1
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker
+      
+  vlab-load2:
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: load2
+    container_name: iflex-vlab-load2
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker
+      
+  vlab-load3:
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: load3
+    container_name: iflex-vlab-load3
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker
+      
+  vlab-battery:
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: battery       
+    container_name: iflex-vlab-battery
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker    
