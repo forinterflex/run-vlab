@@ -7,15 +7,15 @@ services:
       - OWNER=AIT
     container_name: iflex-vlab-mqtt-broker
     ports:
-      -1883:1883
-      -9001:9001
+      - "1883:1883"
+      - "9001:9001"
       
   vlab-config:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
     ports:
-      - 10101:10101
+      - "10101:10101"
     command: config
     container_name: iflex-vlab-config
     
