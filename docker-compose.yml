@@ -66,3 +66,40 @@ services:
       - vlab-mqtt-broker    
     stdin_open: true
     tty: true  
+
+  vlab-pvgen:
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: pvgen       
+    container_name: iflex-vlab-pvgen
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker    
+    stdin_open: true
+    tty: true  
+    
+  vlab-breaker
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: breaker 
+    container_name: iflex-vlab-breaker
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker    
+    stdin_open: true
+    tty: true  
+
+  vlab-admin
+    image: forinterflex/vlab:ait-v0.1
+    environment:
+      - OWNER=AIT
+    command: admin
+    container_name: iflex-vlab-admin
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker    
+    stdin_open: true
+    tty: true  
+
