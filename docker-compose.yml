@@ -97,9 +97,6 @@ services:
       - OWNER=AIT
     command: admin
     container_name: iflex-vlab-admin
-    depends_on:
-      - vlab-config
-      - vlab-mqtt-broker    
     stdin_open: true
     tty: true  
 
