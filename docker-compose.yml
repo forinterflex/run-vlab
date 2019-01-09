@@ -79,7 +79,7 @@ services:
     stdin_open: true
     tty: true  
     
-  vlab-breaker
+  vlab-breaker:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
@@ -91,7 +91,7 @@ services:
     stdin_open: true
     tty: true  
 
-  vlab-admin
+  vlab-admin:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
