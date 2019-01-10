@@ -95,6 +95,7 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - LOG4J_LEVEL=ERROR
     command: admin
     container_name: iflex-vlab-admin
     stdin_open: true
