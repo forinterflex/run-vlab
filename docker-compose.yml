@@ -1,5 +1,9 @@
-# InterFlex Vlab
-# 
+# {
+#   title: "InterFlex Vlab"
+#   configuration_version: "0.1"
+#   last_updated: "11.01.2019"
+# }
+
 version: '3'
 
 services:
@@ -11,7 +15,7 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
-      
+  
   vlab-config:
     image: forinterflex/vlab:ait-v0.1
     environment:
@@ -20,8 +24,8 @@ services:
       - "10101:10101"
     command: config
     container_name: iflex-vlab-config
-
-vlab-admin:
+  
+  vlab-admin:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT      
@@ -29,7 +33,7 @@ vlab-admin:
     container_name: iflex-vlab-admin
     stdin_open: true
     tty: true
-    
+  
   vlab-load1:
     image: forinterflex/vlab:ait-v0.1
     environment:
