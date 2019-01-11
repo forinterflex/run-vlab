@@ -18,6 +18,15 @@ services:
       - "10101:10101"
     command: config
     container_name: iflex-vlab-config
+
+vlab-admin:
+    image: forinterflex/vlab:ait-v0.1
+    stdin_open: true
+    tty: true     
+    environment:
+      - OWNER=AIT      
+    command: admin
+    container_name: iflex-vlab-admin
     
   vlab-load1:
     image: forinterflex/vlab:ait-v0.1
@@ -90,14 +99,5 @@ services:
       - vlab-mqtt-broker    
     stdin_open: true
     tty: true  
-
-  vlab-admin:
-    image: forinterflex/vlab:ait-v0.1
-    environment:
-      - OWNER=AIT
-      - LOG4J_LEVEL=ERROR
-    command: admin
-    container_name: iflex-vlab-admin
-    stdin_open: true
-    tty: true  
-
+    
+    
