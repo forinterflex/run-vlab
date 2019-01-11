@@ -1,3 +1,5 @@
+# InterFlex Vlab
+# 
 version: '3'
 
 services:
@@ -21,12 +23,12 @@ services:
 
 vlab-admin:
     image: forinterflex/vlab:ait-v0.1
-    stdin_open: true
-    tty: true     
     environment:
       - OWNER=AIT      
     command: admin
     container_name: iflex-vlab-admin
+    stdin_open: true
+    tty: true
     
   vlab-load1:
     image: forinterflex/vlab:ait-v0.1
@@ -38,7 +40,7 @@ vlab-admin:
       - vlab-config
       - vlab-mqtt-broker
     stdin_open: true
-    tty: true  
+    tty: true
     
   vlab-load2:
     image: forinterflex/vlab:ait-v0.1
@@ -50,7 +52,7 @@ vlab-admin:
       - vlab-config
       - vlab-mqtt-broker
     stdin_open: true
-    tty: true  
+    tty: true
       
   vlab-load3:
     image: forinterflex/vlab:ait-v0.1
@@ -62,7 +64,7 @@ vlab-admin:
       - vlab-config
       - vlab-mqtt-broker
     stdin_open: true
-    tty: true  
+    tty: true
       
   vlab-battery:
     image: forinterflex/vlab:ait-v0.1
@@ -74,7 +76,7 @@ vlab-admin:
       - vlab-config
       - vlab-mqtt-broker    
     stdin_open: true
-    tty: true  
+    tty: true
 
   vlab-pvgen:
     image: forinterflex/vlab:ait-v0.1
@@ -86,7 +88,7 @@ vlab-admin:
       - vlab-config
       - vlab-mqtt-broker    
     stdin_open: true
-    tty: true  
+    tty: true
     
   vlab-breaker:
     image: forinterflex/vlab:ait-v0.1
@@ -98,6 +100,5 @@ vlab-admin:
       - vlab-config
       - vlab-mqtt-broker    
     stdin_open: true
-    tty: true  
-    
+    tty: true
     
