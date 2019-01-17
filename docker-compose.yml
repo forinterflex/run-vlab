@@ -15,7 +15,8 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
-    network: iflex-vlab-bridge-net
+    networks: 
+      - iflex-vlab-bridge-net
     
   vlab-config:
     image: forinterflex/vlab:ait-v0.1
