@@ -115,5 +115,4 @@ services:
 networks:
      iflex-vlab-bridge-net:
         driver: bridge
-        enable_ipv6: false
 
