@@ -111,4 +111,8 @@ services:
       - vlab-mqtt-broker    
     stdin_open: true
     tty: true
-    
+
+networks:
+     - iflex-vlab-bridge-net
+
+
