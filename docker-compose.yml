@@ -28,7 +28,10 @@ services:
   vlab-admin:
     image: forinterflex/vlab:ait-v0.1
     environment:
-      - OWNER=AIT      
+      - OWNER=AIT
+      - LLSIMDESC_NAME="InterFlex VLab Microgrid Example"
+      - LLSIMDESC_INFO="A simple exaple of a Microgrid with AIT Lablink."
+      - LLSIMDESC_URL="http://notes.io/4DtB"
     command: admin
     depends_on:
       - vlab-config
