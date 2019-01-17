@@ -30,6 +30,9 @@ services:
     environment:
       - OWNER=AIT      
     command: admin
+    depends_on:
+      - vlab-config
+      - vlab-mqtt-broker
     ports:
       - "8080:8080"
     container_name: iflex-vlab-admin
