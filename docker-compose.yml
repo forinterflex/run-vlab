@@ -26,9 +26,8 @@ services:
       - "10101:10101"
     command: config
     container_name: iflex-vlab-config
-    networks: 
-      - iflex-vlab-bridge-net
-  
+    network_mode: "host"
+    
   vlab-admin:
     image: forinterflex/vlab:ait-v0.1
     environment:
@@ -43,8 +42,7 @@ services:
     ports:
       - "8080:8080"
     container_name: iflex-vlab-admin
-    networks: 
-      - iflex-vlab-bridge-net
+    network_mode: "host"
     
   vlab-load1:
     image: forinterflex/vlab:ait-v0.1
@@ -57,8 +55,7 @@ services:
       - vlab-mqtt-broker
     stdin_open: true
     tty: true
-    networks: 
-      - iflex-vlab-bridge-net
+    network_mode: "host"
     
   vlab-load2:
     image: forinterflex/vlab:ait-v0.1
@@ -71,8 +68,7 @@ services:
       - vlab-mqtt-broker
     stdin_open: true
     tty: true
-    networks: 
-      - iflex-vlab-bridge-net
+    network_mode: "host"
       
   vlab-load3:
     image: forinterflex/vlab:ait-v0.1
@@ -85,8 +81,7 @@ services:
       - vlab-mqtt-broker
     stdin_open: true
     tty: true
-    networks: 
-      - iflex-vlab-bridge-net
+    network_mode: "host"
       
   vlab-battery:
     image: forinterflex/vlab:ait-v0.1
@@ -99,8 +94,7 @@ services:
       - vlab-mqtt-broker    
     stdin_open: true
     tty: true
-    networks: 
-      - iflex-vlab-bridge-net
+    network_mode: "host"
 
   vlab-pvgen:
     image: forinterflex/vlab:ait-v0.1
@@ -113,8 +107,7 @@ services:
       - vlab-mqtt-broker    
     stdin_open: true
     tty: true
-    networks: 
-      - iflex-vlab-bridge-net
+    network_mode: "host"
     
   vlab-breaker:
     image: forinterflex/vlab:ait-v0.1
@@ -127,10 +120,5 @@ services:
       - vlab-mqtt-broker    
     stdin_open: true
     tty: true
-    networks: 
-      - iflex-vlab-bridge-net
-
-networks:
-     iflex-vlab-bridge-net:
-        driver: host
+    network_mode: "host"
 
