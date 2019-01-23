@@ -34,8 +34,8 @@ services:
     environment:
       - OWNER=AIT
       - LLSIMDESC_NAME="InterFlex VLab Microgrid Example"
-      - LLSIMDESC_INFO="A simple exaple of a Microgrid with AIT Lablink."
-      - LLSIMDESC_URL="http://notes.io/4DtB"
+      - LLSIMDESC_INFO="A simple exaple of a Microgrid model running with AIT Lablink."
+      - LLSIMDESC_URL="https://github.com/forinterflex/vlab-setup"
     command: admin
     depends_on:
       - vlab-config
@@ -132,5 +132,5 @@ services:
 
 networks:
      iflex-vlab-bridge-net:
-        driver: bridge
+        driver: host
 
