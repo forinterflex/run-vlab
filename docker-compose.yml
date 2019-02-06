@@ -16,6 +16,7 @@ services:
       - "1883:1883"
       - "9001:9001"
     network_mode: "host"
+    host_name: "vlab.mqtt.broker"
     
   vlab-config:
     image: forinterflex/vlab:ait-v0.1
@@ -26,6 +27,7 @@ services:
     command: config
     container_name: iflex-vlab-config
     network_mode: "host"
+    host_name: "vlab.config"
     
   vlab-admin:
     image: forinterflex/vlab:ait-v0.1
@@ -42,6 +44,7 @@ services:
       - "8080:8080"
     container_name: iflex-vlab-admin
     network_mode: "host"
+    host_name: "vlab.admin"
     
   vlab-load1:
     image: forinterflex/vlab:ait-v0.1
