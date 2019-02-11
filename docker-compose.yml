@@ -36,6 +36,8 @@ services:
       - LLSIMDESC_NAME="InterFlex VLab Microgrid Example"
       - LLSIMDESC_INFO="A simple exaple of a Microgrid model running with AIT Lablink."
       - LLSIMDESC_URL="https://github.com/forinterflex/vlab-setup"
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=      
     command: admin
     depends_on:
       - vlab-config
@@ -49,6 +51,8 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     command: load1
     container_name: iflex-vlab-load1
     depends_on:
@@ -62,6 +66,8 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     command: load2
     container_name: iflex-vlab-load2
     depends_on:
@@ -75,6 +81,8 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     command: load3
     container_name: iflex-vlab-load3
     depends_on:
@@ -88,6 +96,8 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     command: battery       
     container_name: iflex-vlab-battery
     depends_on:
@@ -101,6 +111,8 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     command: pvgen       
     container_name: iflex-vlab-pvgen
     depends_on:
@@ -114,6 +126,8 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     command: breaker 
     container_name: iflex-vlab-breaker
     depends_on:
