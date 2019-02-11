@@ -22,7 +22,7 @@ services:
     environment:
       - OWNER=AIT
       - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
-      - LLCONFIG="http://${VLAB_DOCKER_HOST}:10101/get?id="
+      - LLCONFIG=http://${VLAB_DOCKER_HOST}:10101/get?id=
     ports:
       - "10101:10101"
     command: config
