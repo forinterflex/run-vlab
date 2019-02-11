@@ -21,6 +21,7 @@ services:
     image: forinterflex/vlab:ait-v0.1
     environment:
       - OWNER=AIT
+      - VLAB_DOCKER_HOST=${VLAB_DOCKER_HOST}
     ports:
       - "10101:10101"
     command: config
